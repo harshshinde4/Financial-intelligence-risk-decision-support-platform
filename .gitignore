@@ -1,0 +1,31 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+.idea/
+.vscode/
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Local vector database and generated RAG index
+data/rag/chroma/
+
+# Generated evaluation results
+data/rag/evaluation/latest_report.json
+data/rag/evaluation/latest_answer_report.json
+
+# Generated financial briefs and validation reports
+data/reports/
+
+# Local backups
+*.bak

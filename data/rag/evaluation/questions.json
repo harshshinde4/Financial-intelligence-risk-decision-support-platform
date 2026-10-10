@@ -1,0 +1,29 @@
+[
+  {
+    "id": "aapl_equity_risk",
+    "question": "What measures should be reviewed when assessing AAPL equity risk?",
+    "ticker": "AAPL",
+    "top_k": 3,
+    "expected_source": "demo_aapl_risk.md",
+    "expected_ticker": "AAPL",
+    "expect_empty": false
+  },
+  {
+    "id": "market_risk_methodology",
+    "question": "Explain the difference between annualized volatility, maximum drawdown, Value at Risk, and Expected Shortfall.",
+    "ticker": null,
+    "top_k": 3,
+    "expected_source": "demo_market_risk.md",
+    "expected_ticker": null,
+    "expect_empty": false
+  },
+  {
+    "id": "unknown_ticker_should_not_match",
+    "question": "What does the internal risk note say about TSLA?",
+    "ticker": "TSLA",
+    "top_k": 3,
+    "expected_source": null,
+    "expected_ticker": null,
+    "expect_empty": true
+  }
+]
