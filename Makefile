@@ -1,20 +1,23 @@
+
+.PHONY: install run test lint format typecheck up down logs db
+
 install:
 	pip install -e ".[dev]"
 
 run:
-	uvicorn financial_ai.api.main:app --reload
+	python -m uvicorn financial_ai.api.main:app --reload
 
 test:
-	pytest
+	python -m pytest
 
 lint:
-	ruff check .
+	python -m ruff check src tests scripts
 
 format:
-	ruff check . --fix
+	python -m ruff format src tests scripts
 
 typecheck:
-	mypy src
+	python -m mypy src
 
 up:
 	docker compose up --build

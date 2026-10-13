@@ -1,3 +1,4 @@
+
 services:
   postgres:
     image: postgres:16-alpine
@@ -12,7 +13,9 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-financial_ai} -d ${POSTGRES_DB:-financial_ai}"]
+      test:
+        - CMD-SHELL
+        - pg_isready -U ${POSTGRES_USER:-financial_ai} -d ${POSTGRES_DB:-financial_ai}
       interval: 5s
       timeout: 5s
       retries: 10
@@ -25,6 +28,8 @@ services:
     restart: unless-stopped
     env_file:
       - .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-financial_ai}:${POSTGRES_PASSWORD:-financial_ai_dev}@postgres:5432/${POSTGRES_DB:-financial_ai}
     ports:
       - "8000:8000"
     depends_on:

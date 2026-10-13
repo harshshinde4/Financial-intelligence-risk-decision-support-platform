@@ -48,7 +48,6 @@ class FinancialRAGService:
             ],
             "answer": None,
             "answer_note": (
-                "Retrieval-only baseline; generation follows after "
-                "retrieval quality is inspected."
+                "Retrieval-only baseline; generation follows after retrieval quality is inspected."
             ),
         }

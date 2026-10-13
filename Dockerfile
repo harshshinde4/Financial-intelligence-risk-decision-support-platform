@@ -1,3 +1,4 @@
+
 FROM python:3.12-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -8,8 +9,10 @@ WORKDIR /app
 
 COPY pyproject.toml .
 COPY src ./src
+COPY data/rag/corpus ./data/rag/corpus
 
-RUN pip install --upgrade pip && pip install .
+RUN pip install --upgrade pip \
+    && pip install ".[ml,nlp,llm]"
 
 EXPOSE 8000
 
