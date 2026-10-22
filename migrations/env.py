@@ -4,8 +4,8 @@ from alembic import context
 from sqlalchemy import engine_from_config, pool
 
 from financial_ai.config.settings import get_settings
-from financial_ai.db.base import Base
 from financial_ai.db import models  # noqa: F401
+from financial_ai.db.base import Base
 
 config = context.config
 
