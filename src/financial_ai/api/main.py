@@ -6,6 +6,7 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from financial_ai.api.routes.agent import router as agent_router
 from financial_ai.api.routes.analytics import router as analytics_router
 from financial_ai.api.routes.companies import router as companies_router
 from financial_ai.api.routes.explainability import router as explainability_router
@@ -173,6 +174,7 @@ async def unexpected_exception_handler(
 app.include_router(health_router, prefix=settings.api_v1_prefix)
 app.include_router(companies_router, prefix=settings.api_v1_prefix)
 app.include_router(market_router, prefix=settings.api_v1_prefix)
+app.include_router(agent_router, prefix=settings.api_v1_prefix)
 app.include_router(analytics_router, prefix=settings.api_v1_prefix)
 app.include_router(ml_router, prefix=settings.api_v1_prefix)
 app.include_router(nlp_router, prefix=settings.api_v1_prefix)
